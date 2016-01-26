@@ -8,6 +8,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/ifobos/JRTNavigationBarStyle.git", :tag => "0.0.1" }
   s.source_files = "JRTNavigationBarStyle/JRTNavigationBarStyle/PodFiles/*.{h,m}"
-  s.resources    = "JRTNavigationBarStyle/JRTNavigationBarStyle/PodFiles/*.{png,bundle,xib,nib}"
   s.requires_arc = true
 end
