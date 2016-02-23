@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Title";
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (IBAction)clear:(id)sender {
