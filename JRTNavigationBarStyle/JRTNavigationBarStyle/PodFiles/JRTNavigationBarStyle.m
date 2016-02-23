@@ -13,7 +13,7 @@
 //THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+//AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
@@ -22,40 +22,35 @@
 
 @implementation UINavigationBar (Style)
 
-- (void)clearStyle
-{
+- (void)clearStyle {
     self.backgroundColor = [UIColor clearColor];
-    self.barTintColor    = [UIColor clearColor];
-    self.tintColor       = [[UIApplication sharedApplication] delegate].window.tintColor;
-    self.shadowImage     = [UIImage new];
-    self.translucent     = YES;
+    self.barTintColor = [UIColor clearColor];
+    self.tintColor = [[UIApplication sharedApplication] delegate].window.tintColor;
+    self.shadowImage = [UIImage new];
+    self.translucent = YES;
+    self.titleTextAttributes = @{ NSForegroundColorAttributeName: [UIColor blackColor], NSFontAttributeName: [UIFont boldSystemFontOfSize:17] };
     [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 }
 
-
-- (void)setStyleWithBackgorundColor: (UIColor *)backgroundColor titleFont:(UIFont *)titlefont textColor: (UIColor *)textColor removeLowerShadow:(BOOL)removeShadow
-{
+- (void)setStyleWithBackgorundColor:(UIColor *)backgroundColor titleFont:(UIFont *)titlefont textColor:(UIColor *)textColor removeLowerShadow:(BOOL)removeShadow {
     [self clearStyle];
     [self setBackgroundImage:[self imageWithColor:backgroundColor] forBarMetrics:UIBarMetricsDefault];
-    self.tintColor                      = textColor;
-    self.titleTextAttributes            = @{
-                                            NSForegroundColorAttributeName : textColor,
-                                            NSFontAttributeName : titlefont
-                                            };
-    if (removeShadow) self.shadowImage  = [UIImage new];
+    self.tintColor = textColor;
+    self.titleTextAttributes = @{ NSForegroundColorAttributeName: textColor, NSFontAttributeName: titlefont };
+    if (removeShadow) {
+        self.shadowImage = [UIImage new];
+    }
 }
 
-- (UIImage *)imageWithColor:(UIColor *)color
-{
-    CGRect rect             = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context    = UIGraphicsGetCurrentContext();
+    CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
-    UIImage *image          = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
 }
-
 
 @end

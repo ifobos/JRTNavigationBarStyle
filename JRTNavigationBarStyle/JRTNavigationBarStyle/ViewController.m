@@ -15,27 +15,23 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Title";
 }
 
-- (IBAction)clear:(id)sender
-{
+- (IBAction)clear:(id)sender {
     [self.navigationController.navigationBar clearStyle];
 }
 
-- (IBAction)blue:(id)sender
-{
+- (IBAction)blue:(id)sender {
     [self.navigationController.navigationBar setStyleWithBackgorundColor:[UIColor blueColor]
                                                                titleFont:[UIFont systemFontOfSize:15 weight:UIFontWeightLight]
                                                                textColor:[UIColor grayColor]
                                                        removeLowerShadow:YES];
 }
 
-- (IBAction)red:(id)sender
-{
+- (IBAction)red:(id)sender {
     [self.navigationController.navigationBar setStyleWithBackgorundColor:[UIColor redColor]
                                                                titleFont:[UIFont systemFontOfSize:17 weight:UIFontWeightBold]
                                                                textColor:[UIColor whiteColor]
