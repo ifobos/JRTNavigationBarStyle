@@ -32,11 +32,12 @@
     [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 }
 
-- (void)setStyleWithBackgorundColor:(UIColor *)backgroundColor titleFont:(UIFont *)titlefont textColor:(UIColor *)textColor removeLowerShadow:(BOOL)removeShadow {
+- (void)setStyleWithBackgorundColor:(UIColor *)backgroundColor titleFont:(UIFont *)titlefont textColor:(UIColor *)textColor translucent:(BOOL)translucent removeLowerShadow:(BOOL)removeShadow {
     [self clearStyle];
     [self setBackgroundImage:[self imageWithColor:backgroundColor] forBarMetrics:UIBarMetricsDefault];
     self.tintColor = textColor;
     self.titleTextAttributes = @{ NSForegroundColorAttributeName: textColor, NSFontAttributeName: titlefont };
+    self.translucent = translucent;
     if (removeShadow) {
         self.shadowImage = [UIImage new];
     }

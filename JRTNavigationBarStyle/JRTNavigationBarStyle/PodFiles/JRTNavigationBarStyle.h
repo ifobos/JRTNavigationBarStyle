@@ -23,6 +23,6 @@
 @interface UINavigationBar (Style)
 
 - (void)clearStyle;
-- (void)setStyleWithBackgorundColor:(UIColor *)backgroundColor titleFont:(UIFont *)titlefont textColor:(UIColor *)textColor removeLowerShadow:(BOOL)removeShadow;
+- (void)setStyleWithBackgorundColor:(UIColor *)backgroundColor titleFont:(UIFont *)titlefont textColor:(UIColor *)textColor translucent:(BOOL)translucent removeLowerShadow:(BOOL)removeShadow;
 
 @end

@@ -29,6 +29,7 @@
     [self.navigationController.navigationBar setStyleWithBackgorundColor:[UIColor blueColor]
                                                                titleFont:[UIFont systemFontOfSize:15 weight:UIFontWeightLight]
                                                                textColor:[UIColor grayColor]
+                                                             translucent:NO
                                                        removeLowerShadow:YES];
 }
 
@@ -36,6 +37,7 @@
     [self.navigationController.navigationBar setStyleWithBackgorundColor:[UIColor redColor]
                                                                titleFont:[UIFont systemFontOfSize:17 weight:UIFontWeightBold]
                                                                textColor:[UIColor whiteColor]
+                                                             translucent:YES
                                                        removeLowerShadow:NO];
 }
 
